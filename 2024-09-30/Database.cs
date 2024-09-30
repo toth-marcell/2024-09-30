@@ -53,5 +53,27 @@ namespace _2024_09_30
             }
             return list;
         }
+        public static void NewCar(Car car)
+        {
+            try
+            {
+                new MySqlCommand($"INSERT INTO `cars` (`make`, `model`, `colour`, `year`, `power`) VALUES ('{car.Make}', '{car.Model}', '{car.Colour}', {car.Year}, {car.Power})", Connection).ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                ShowError(e);
+            }
+        }
+        public static void DeleteCar(int id)
+        {
+            try
+            {
+                new MySqlCommand($"DELETE FROM `cars` WHERE `id`={id}", Connection).ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                ShowError(e);
+            }
+        }
     }
 }

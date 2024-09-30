@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+﻿using System.Windows.Forms;
 namespace _2024_09_30
 {
     public partial class Form1 : Form
@@ -16,6 +7,13 @@ namespace _2024_09_30
         {
             InitializeComponent();
             Database.OpenConnection();
+            //Database.NewCar(new Car
+            //{
+            //    Make = "Test",
+            //    Model = "test",
+            //    Year = 2000
+            //});
+            //Database.DeleteCar(1);
             UpdateCarsListBox();
         }
         void UpdateCarsListBox()
