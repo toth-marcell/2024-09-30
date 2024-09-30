@@ -15,6 +15,13 @@ namespace _2024_09_30
         public Form1()
         {
             InitializeComponent();
+            Database.OpenConnection();
+            UpdateCarsListBox();
+        }
+        void UpdateCarsListBox()
+        {
+            carsListBox.Items.Clear();
+            foreach (Car car in Database.GetAllCars()) carsListBox.Items.Add(car);
         }
     }
 }
